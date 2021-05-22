@@ -2,7 +2,7 @@
 
 Run the script from the command line or double click on it to generate a 30 character password.
 
-The generated password will be copied to the clipboard automatically.
+The generated password will be copied to the clipboard automatically (on linux this requires `xclip` or `xsel` command to be installed).
 
 By default the password is hidden, if you want to show it on the command line run the program passing the `-s` parameter.
 
