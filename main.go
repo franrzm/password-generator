@@ -43,7 +43,7 @@ func main() {
 	var showPassword bool
 
 	flag.IntVar(&passwordLength, "l", defaultLenght, "Specify the length of the password. Default length is 30.")
-	flag.BoolVar(&showPassword, "s", false, "Use this param to show the password on the console. Ba default the password will be hidden.")
+	flag.BoolVar(&showPassword, "s", false, "Use this param to show the password on the console. By default the password will be hidden.")
 
 	flag.Parse()
 
