@@ -8,16 +8,14 @@ import (
 	"github.com/atotto/clipboard"
 )
 
-var defaultLenght int = 30
-
-var (
-	lowerCaseLetters = []byte("abcdefghijklmnopqrstuvwxyz")
-	upperCaseLetters = []byte("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-	numbers          = []byte("0123456789")
-	symbols          = []byte("`~!@#$%^&*()_-+={}[]\\|:;\"'<>,.?/")
-)
-
 func generatePassword(stringLength int) string {
+	var (
+		lowerCaseLetters = []byte("abcdefghijklmnopqrstuvwxyz")
+		upperCaseLetters = []byte("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+		numbers          = []byte("0123456789")
+		symbols          = []byte("`~!@#$%^&*()_-+={}[]\\|:;\"'<>,.?/")
+	)
+
 	randomString := make([]byte, stringLength)
 
 	rand.Seed(time.Now().UnixNano())
@@ -42,8 +40,22 @@ func main() {
 	var passwordLength int
 	var showPassword bool
 
-	flag.IntVar(&passwordLength, "l", defaultLenght, "Specify the length of the password. Default length is 30.")
-	flag.BoolVar(&showPassword, "s", false, "Use this param to show the password on the console. By default the password will be hidden.")
+	const defaultLenght int = 30
+	const defaultPasswordVisibility bool = false
+
+	flag.IntVar(
+		&passwordLength,
+		"l",
+		defaultLenght,
+		"Specify the length of the password. Default length is 30.",
+	)
+
+	flag.BoolVar(
+		&showPassword,
+		"s",
+		defaultPasswordVisibility,
+		"Use this param to show the password on the console. By default the password will be hidden.",
+	)
 
 	flag.Parse()
 
