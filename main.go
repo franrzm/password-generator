@@ -40,13 +40,13 @@ func main() {
 	var passwordLength int
 	var showPassword bool
 
-	const defaultLenght int = 30
+	const defaultLength int = 30
 	const defaultPasswordVisibility bool = false
 
 	flag.IntVar(
 		&passwordLength,
 		"l",
-		defaultLenght,
+		defaultLength,
 		"Specify the length of the password. Default length is 30.",
 	)
 
